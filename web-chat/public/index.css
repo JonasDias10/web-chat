@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue-color: #226F9E;
+    --white-color: #F2F2F2;
+    --bg-left-messages: #007566;
+    --bg-right-messages: #4F6F8C;
+    --bg-online-circle: #03A64A;
+    --user-name-color: #FFAE00;
+    --jet-brains-font: 'JetBrains Mono', monospace; 
+}
+
+html {
+    font-size: 62.5%;
+    font-family: var(--jet-brains-font);
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+button {
+    font-family: var(--jet-brains-font);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+#container {
+    display: flex;
+}
+
+#chat-aside {
+    background: var(--bg-left-messages);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 38%;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+#chat-aside h1 {
+    color: var(--white-color);
+    text-align: center;
+    font-size: 2.8rem;
+}
+
+#chat-aside img {
+    max-width: 34rem;
+    width: 100%;
+}
+
+#chat {
+    background: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 62%;
+}
+
+#chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.8rem;
+    height: 6rem;
+    box-shadow: 0px 4px 14px #00000025;
+}
+
+#chat-header h1 {
+    font-size: 2.8rem;
+}
+
+#chat-header #count-clients {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+#chat-header #online-circle {
+    background: var(--bg-online-circle);
+    border: 0.12rem solid var(--white-color);
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+}
+
+#chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-height: 82vh;
+    height: 100%;
+    padding: 1rem 2rem;
+    overflow-y: scroll;
+}
+
+#chat-messages .message {
+    color: var(--white-color);
+    padding: 1.4rem 2.6rem;
+    max-width: 48rem;
+    overflow-wrap: break-word;
+}
+
+#chat-messages .left-message { 
+    background: var(--bg-left-messages);
+    border-radius: 1rem 1rem 1rem 0;
+    align-self: self-start;
+}
+
+#chat-messages .left-message span {
+    display: inline-block;
+    color: var(--user-name-color);
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+}
+
+#chat-messages .right-message {
+    background: var(--bg-right-messages);
+    border-radius: 1rem 1rem 0 1rem;
+    align-self: self-end;
+}
+
+#message-form{
+    background: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2rem;
+    height: 5.8rem;
+    border-top: 0.12rem solid #00000080;
+}
+
+#message-form #message {
+    background: var(--white-color);
+    padding-left: 2rem;
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 60%;
+}
+
+#label-input-file {
+    cursor: pointer;
+}
+
+#label-input-file img {
+    height: 3rem;
+}
+
+#input-file {
+    display: none;
+}
+
+#message-form button {
+    height: 4rem;
+    border-radius: 0.4rem;
+}
+
+#message-form button img {
+    height: 3rem;
+}
+
+#welcome-chat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue-color);
+    padding: 0 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#welcome-chat h1 {
+    text-align: center;
+    color: var(--white-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+}
+
+#welcome-form input {
+    border: none;
+    outline: none;
+    border-radius: 0.8rem;
+    padding: 1rem 2rem;
+}
+
+#welcome-form button {
+    background: var(--white-color);
+    color: var(--blue-color);
+    border-radius: 0.8rem;
+    font-weight: bold;
+}
+
+@media(max-width: 700px) {
+    #container {
+        flex-direction: column;
+        max-height: 100vh;
+        height: 100%;
+    }
+
+    #chat, 
+    #chat-aside {
+        width: 100%;
+    }
+
+    #chat-aside img {
+        width: 10rem;
+    }
+
+}

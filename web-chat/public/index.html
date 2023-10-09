@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="./assets/chat.png" type="image/x-icon">
+        <link rel="stylesheet" href="./index.css">
+        <title>Web Chat</title>
+    </head>
+    <body>
+        <div id="container">
+            <aside id="chat-aside">
+                <h1>
+                    Bem-vindo ao Web Chat!
+                </h1>
+                <img src="./assets/chat.png" alt="">
+            </aside>
+
+            <div id="chat">
+                <header id="chat-header">
+                    <h1>
+                        Mensagens
+                    </h1>
+                    <div id="count-clients">
+                        <div id="online-circle"></div>
+                        <span id="online-count">0</span>
+                    </div>
+                </header>
+                <div id="chat-messages">
+                </div>
+                
+                <form id="message-form">
+                    <input type="text" name="message" id="message" placeholder="Escreva sua mensagem" required>
+                
+                    <div id="options-form">
+                        <label for="input-file" id="label-input-file">
+                            <img src="./assets/attachment.png" alt="Attach files.">
+                        </label>
+
+                        <!--
+                            <input type="file" name="input-file" id="input-file" accept="image/png, image/gif, image/jpeg"> 
+                        -->
+                        
+                        <button type="submit">
+                            <img src="./assets/send-icon.svg" alt="Send message icon.">
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="welcome-chat">
+            <h1>
+                Bem-vindo ao web chat, informe o seu nome.
+            </h1>
+            <form id="welcome-form">
+                <input type="text" name="user-name" id="user-name" placeholder="Insira seu nome" required>
+                <button type="submit">
+                    Entrar
+                </button>
+            </form>
+        </div> 
+        
+        <script type="module" src="./index.js"></script>
+    </body>
+</html>
