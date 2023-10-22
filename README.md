@@ -41,7 +41,7 @@ npm install
 npm start
 ```
 
-The server will be running at `http://localhost:3000`.
+The server will be running at `http://localhost:8080`.
 
 5. Open your web browser and access `http://localhost:8080` to start using the chat.
 
