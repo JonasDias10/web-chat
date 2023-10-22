@@ -4,7 +4,8 @@
   "description": "Web chat",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "npm server.js"
   },
   "keywords": [
     "Web",
