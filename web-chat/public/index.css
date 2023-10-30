@@ -116,6 +116,14 @@ button {
     overflow-wrap: break-word;
 }
 
+#chat-messages .message img {
+    display: block;
+    padding: 1rem;
+    width: 25rem;
+    height: 25rem;
+    object-fit: contain;
+}
+
 #chat-messages .left-message { 
     background: var(--bg-left-messages);
     border-radius: 1rem 1rem 1rem 0;

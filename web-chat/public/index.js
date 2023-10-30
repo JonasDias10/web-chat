@@ -43,6 +43,9 @@ socket.addEventListener('message', (event) => {
         case ACTIONS.MESSAGE:
             handleReceiveMessage(data);
             break;
+        case ACTIONS.IMAGE:
+            handleReceiveImage(data);
+            break;
         default:
             console.log('Error: Unknown action.');
     }
@@ -81,24 +84,49 @@ document.getElementById('welcome-form').addEventListener('submit', (event) => {
     document.getElementById('welcome-chat').style.display = 'none';
 });
 
-/*
 const inputFile = document.getElementById('input-file');
 inputFile.addEventListener('change', (event) => {
-    handleUploadImage(event);
+    handleUploadImage();
 });
 
-const handleUploadImage = (event) => {
+const handleUploadImage = () => {
     const reader = new FileReader();
 
     reader.readAsDataURL(inputFile.files[0]);
 
     reader.onload = (event) => {
+        const messageContainer = document.createElement('div');
+        messageContainer.classList.add('message', 'right-message');
+
+        const imageFile = event.target.result;
+
         const image = document.createElement('img');
-        image.setAttribute('src', event.target.result);
+        image.setAttribute('src', imageFile);
     
-        messagesContainer.appendChild(image);
+        messageContainer.appendChild(image);
+        messagesContainer.appendChild(messageContainer);
+
+        const message = {
+            action: ACTIONS.IMAGE,
+            file: imageFile,
+            userName: sessionStorage.getItem('user-name')
+        }
+
+        socket.send(JSON.stringify(message));
     }
 
 };
 
-*/
+const handleReceiveImage = (message) => {
+    const messageContainer = document.createElement('div');
+    messageContainer.classList.add('message', 'left-message');
+
+    const span = document.createElement('span');
+    span.innerText = message.userName
+
+    const image = document.createElement('img');
+    image.setAttribute('src', message.file);
+
+    messageContainer.append(span, image);
+    messagesContainer.appendChild(messageContainer);
+}
