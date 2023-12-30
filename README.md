@@ -2,6 +2,12 @@
 
 This is an example project of a real-time chat application using WebSocket. The purpose of this project is to demonstrate how to create a simple chat that allows users to connect and chat in real-time using WebSocket technology.
 
+---
+
+![Project Media](./media/web-chat-gif.gif)
+
+---
+
 ## Features
 
 - Real-time connection: Users can connect to the chat in real-time using WebSocket.
