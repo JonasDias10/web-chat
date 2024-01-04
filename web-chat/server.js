@@ -35,7 +35,7 @@ webSocket.on('connection', (socket) => {
 const handleReceiveMessage = (socket, message) => {
     switch(message.action) {
         case ACTIONS.MESSAGE:
-            SendToAllUsersExceptTheSender(socket, message);
+            sendToAllUsersExceptTheSender(socket, message);
             break;
         case ACTIONS.IMAGE:
             handleSendImage(socket, message);
@@ -46,7 +46,7 @@ const handleReceiveMessage = (socket, message) => {
 }
 
 const handleSendImage = (socket, message) => {
-    SendToAllUsersExceptTheSender(socket, message);
+    sendToAllUsersExceptTheSender(socket, message);
 }
 
 const updateConnectedClients = () => {
@@ -60,7 +60,7 @@ const updateConnectedClients = () => {
     sendToAllUsers(message);
 }
 
-const SendToAllUsersExceptTheSender = (senderSocket, message) => {
+const sendToAllUsersExceptTheSender = (senderSocket, message) => {
     Array.from(webSocket.clients).forEach(client => {
         if (client !== senderSocket && client.readyState === WebSocket.OPEN) {
             client.send(
