@@ -111,18 +111,28 @@ button {
 
 #chat-messages .message {
     color: var(--white-color);
-    padding: 1.4rem 2.6rem;
+    padding: 1.2rem;
     max-width: 48rem;
     overflow-wrap: break-word;
 }
 
 #chat-messages .message img {
+    cursor: pointer;
     display: block;
-    padding: 1rem;
-    width: 25rem;
-    height: 25rem;
+    max-width: 35rem;
+    width: 98%;
+    height: 20rem;
     object-fit: contain;
 }
+
+#chat-messages .message img:active {
+    position: absolute;
+    max-width: 80vw;
+    height: 80vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 
 
 #chat-messages .left-message { 
     background: var(--bg-left-messages);

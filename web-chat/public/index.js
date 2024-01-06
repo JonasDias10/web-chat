@@ -58,7 +58,7 @@ const handleReceiveMessage = (message) => {
     const span = document.createElement('span');
     const p = document.createElement('p');
 
-    span.innerText = message.userName
+    span.innerText = message.userName;
     p.innerText = message.message;
 
     messageContainer.append(span, p);
@@ -122,7 +122,7 @@ const handleReceiveImage = (message) => {
     messageContainer.classList.add('message', 'left-message');
 
     const span = document.createElement('span');
-    span.innerText = message.userName
+    span.innerText = message.userName;
 
     const image = document.createElement('img');
     image.setAttribute('src', message.file);
