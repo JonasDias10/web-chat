@@ -4,7 +4,7 @@ This is an example project of a real-time chat application using WebSocket. The 
 
 ---
 
-![Project Media](./media/web-chat-gif.gif)
+![Project Media](./media/web-chat.gif)
 
 ---
 
